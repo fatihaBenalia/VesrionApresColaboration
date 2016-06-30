@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CompteParrainEditDlg" widgetVar="CompteParrainEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditCompteParrainTitle}">
+            <h:form id="CompteParrainEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{compteParrainController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditCompteParrainLabel_parrain}" for="parrain" />
+                        <p:selectOneMenu id="parrain" value="#{compteParrainController.selected.parrain}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{parrainController.itemsAvailableSelectOne}"
+                                           var="parrainItem"
+                                           itemValue="#{parrainItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditCompteParrainLabel_montantFamille}" for="montantFamille" />
+                        <p:inputText id="montantFamille" value="#{compteParrainController.selected.montantFamille}" title="#{bundle.EditCompteParrainTitle_montantFamille}" />
+                        <p:outputLabel value="#{bundle.EditCompteParrainLabel_etat}" for="etat" />
+                        <p:inputText id="etat" value="#{compteParrainController.selected.etat}" title="#{bundle.EditCompteParrainTitle_etat}" />
+                        <p:outputLabel value="#{bundle.EditCompteParrainLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{compteParrainController.selected.id}" title="#{bundle.EditCompteParrainTitle_id}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{compteParrainController.update}" value="#{bundle.Save}" update="display,:CompteParrainListForm:datalist,:growl" oncomplete="handleSubmit(args, 'CompteParrainEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="CompteParrainEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

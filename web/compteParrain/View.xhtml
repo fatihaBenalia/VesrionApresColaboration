@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CompteParrainViewDlg" widgetVar="CompteParrainViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewCompteParrainTitle}">
+            <h:form id="CompteParrainViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{compteParrainController.selected != null}">
+                        <h:outputText value="#{bundle.ViewCompteParrainLabel_parrain}"/>
+                        <h:outputText value="#{compteParrainController.selected.parrain}" title="#{bundle.ViewCompteParrainTitle_parrain}"/>
+                        <h:outputText value="#{bundle.ViewCompteParrainLabel_montantFamille}"/>
+                        <h:outputText value="#{compteParrainController.selected.montantFamille}" title="#{bundle.ViewCompteParrainTitle_montantFamille}"/>
+                        <h:outputText value="#{bundle.ViewCompteParrainLabel_etat}"/>
+                        <h:outputText value="#{compteParrainController.selected.etat}" title="#{bundle.ViewCompteParrainTitle_etat}"/>
+                        <h:outputText value="#{bundle.ViewCompteParrainLabel_id}"/>
+                        <h:outputText value="#{compteParrainController.selected.id}" title="#{bundle.ViewCompteParrainTitle_id}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="CompteParrainViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

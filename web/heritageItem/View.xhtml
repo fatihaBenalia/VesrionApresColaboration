@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="HeritageItemViewDlg" widgetVar="HeritageItemViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewHeritageItemTitle}">
+            <h:form id="HeritageItemViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{heritageItemController.selected != null}">
+                        <h:outputText value="#{bundle.ViewHeritageItemLabel_dossier}"/>
+                        <h:outputText value="#{heritageItemController.selected.dossier}" title="#{bundle.ViewHeritageItemTitle_dossier}"/>
+                        <h:outputText value="#{bundle.ViewHeritageItemLabel_id}"/>
+                        <h:outputText value="#{heritageItemController.selected.id}" title="#{bundle.ViewHeritageItemTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewHeritageItemLabel_typeHeritage}"/>
+                        <h:outputText value="#{heritageItemController.selected.typeHeritage}" title="#{bundle.ViewHeritageItemTitle_typeHeritage}"/>
+                        <h:outputText value="#{bundle.ViewHeritageItemLabel_type}"/>
+                        <h:outputText value="#{heritageItemController.selected.type}" title="#{bundle.ViewHeritageItemTitle_type}"/>
+                        <h:outputText value="#{bundle.ViewHeritageItemLabel_typePossession}"/>
+                        <h:outputText value="#{heritageItemController.selected.typePossession}" title="#{bundle.ViewHeritageItemTitle_typePossession}"/>
+                        <h:outputText value="#{bundle.ViewHeritageItemLabel_methodeUtilisation}"/>
+                        <h:outputText value="#{heritageItemController.selected.methodeUtilisation}" title="#{bundle.ViewHeritageItemTitle_methodeUtilisation}"/>
+                        <h:outputText value="#{bundle.ViewHeritageItemLabel_montant}"/>
+                        <h:outputText value="#{heritageItemController.selected.montant}" title="#{bundle.ViewHeritageItemTitle_montant}"/>
+                        <h:outputText value="#{bundle.ViewHeritageItemLabel_blemsApresDeces}"/>
+                        <h:outputText value="#{heritageItemController.selected.blemsApresDeces}" title="#{bundle.ViewHeritageItemTitle_blemsApresDeces}"/>
+                        <h:outputText value="#{bundle.ViewHeritageItemLabel_resultatsDecision}"/>
+                        <h:outputText value="#{heritageItemController.selected.resultatsDecision}" title="#{bundle.ViewHeritageItemTitle_resultatsDecision}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="HeritageItemViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

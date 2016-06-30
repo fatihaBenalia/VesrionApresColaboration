@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListDossierTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <br/>
+            <h:form id="infosDossierImportant"   >
+                <p:growl id="growl" showDetail="true" sticky="true" /> 
+
+
+                <p:messages id="messages"  />
+
+               
+                
+                <br/>
+                <p:fieldset legend="Informations Dossier" style="margin-right: 900px;margin-left: 100px" >
+                    <p:panelGrid columns="6" >
+                        <p:outputLabel value="#{bundle.CreateDossierLabel_dateDossier}" for="dateDossier" style="display:block;width:100px"/>
+                        <p:calendar id="dateDossier" pattern="MM/dd/yyyy" value="#{dossierController.selected.dateDossier}" 
+                                    title="#{bundle.EditDossierTitle_dateDossier}"  
+                                    showOn="button"
+                                    style="display:block;width:200px"
+                                    required="true" requiredMessage="Veuillez Saisir Une Date">
+
+                            
+                            <p:message id="dateDossierMsg" for="dateDossier"/>
+                        </p:calendar>
+
+                        <p:outputLabel value="#{bundle.CreateDossierLabel_numero}" for="numero" style="display:block;width:100px"/>
+                        <p:inputText id="numero" value="#{dossierController.selected.numero}" 
+                                     title="#{bundle.CreateDossierTitle_numero}" 
+                                     required="true" requiredMessage="Veuillez Saisir un numero">
+                            
+                            
+                        </p:inputText>
+
+
+
+                        <p:outputLabel value="nom Famille:" for="nomfamille" style="display:block;width:100px"/>
+                        <p:inputText id="nomfamille" value="#{dossierController.selected.nomFamille}" 
+                                     title="#{bundle.CreateDossierLabel_nomFamille}" 
+                                     required="true" requiredMessage="Veuillez Saisir Le Nom Famille des Orphelins">
+                            
+                            
+                        </p:inputText>
+
+                    </p:panelGrid> 
+                </p:fieldset>
+
+                <p:commandButton value="-- Valider --"    
+                                 actionListener="#{dossierController.creationDossier()}"
+                                 update=":growl"  
+                                 style="margin-left: 1100px;width: 180px;height: 40px;
+                                 font-size: larger"/>
+                <br/><br/>
+                <p:commandButton action="#{dossierController.generatePdf()}"   ajax="false"
+                                 value="-- Imprimer -- " 
+                                 
+                                 style="margin-left: 1100px;width: 180px;height: 40px;
+                                 font-size: xx-large"/>
+                <br/><br/>
+                <p:fieldset legend="Informations Responsable Famille" style="margin-right: 680px;margin-left: 100px;margin-top: -90px">
+                    <p:panelGrid columns="6" >
+
+                        <p:outputLabel value="Cin: " for="Cinresponsable" style="display:block;width:100px"/>
+                        <p:inputText id="Cinresponsable" value="#{dossierController.responsableFamille.id}" 
+                                     title="#{bundle.CreateResponsableFamilleTitle_id}" 
+                                     style="display:block;width:190px"
+                                     required="true" requiredMessage="Veuillez Saisir le CIN du Responsable Famille">
+                        </p:inputText>
+
+                        <p:outputLabel value="nom: " for="nomresponsable" style="display:block;width:100px"/>
+                        <p:inputText id="nomresponsable" value="#{dossierController.responsableFamille.nom}" 
+                                     title="#{bundle.CreateResponsableFamilleTitle_nom}" 
+                                     required="true" requiredMessage="Veuillez Saisir le nom du Responsable Famille">
+                        </p:inputText>
+
+                        <p:outputLabel value="prenom:" for="prenomresponsable" style="display:block;width:100px"/>
+                        <p:inputText id="prenomresponsable" value="#{dossierController.responsableFamille.prenom}"
+                                     title="#{bundle.CreateResponsableFamilleTitle_prenom}" 
+                                    required="true" requiredMessage="Veuillez Saisir le prenom du Responsable Famille" >
+                        </p:inputText>
+
+                        <p:outputLabel value="telephone:" for="telephoneresponsable" style="display:block;width:100px"/>
+                        <p:inputText id="telephoneresponsable" value="#{dossierController.responsableFamille.telephone}" 
+                                     title="#{bundle.CreateResponsableFamilleTitle_telephone}" 
+                                     style="display:block;width:190px"
+                                     required="true" requiredMessage="Veuillez Saisir le GSM du Responsable Famille">
+                        </p:inputText>
+
+                        <p:outputLabel value="Type:" for="type" />
+                        <p:selectOneMenu id="type" value="#{dossierController.responsableFamille.type}" style="display:block;width:150px" >
+                            <f:selectItem  itemLabel="--Select--"/>
+                            <f:selectItem itemValue="GrandMere" itemLabel="Grand-Mere"/>
+                            <f:selectItem itemValue="Maman" itemLabel="Maman"/>
+                            <f:selectItem itemValue="Tante" itemLabel="Tante"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                </p:fieldset>
+                <br/><br/>
+                <p:fieldset legend="Informations Region " style="margin-right: 680px">
+
+                    <p:panelGrid columns="2">
+
+                        <p:outputLabel value="#{bundle.CreateDossierLabel_adresseActuelle}" for="adresseActuelle" style="display:block;width: 100px"/>
+                        <p:inputText id="adresseActuelle" value="#{dossierController.selected.adresseActuelle}" 
+                                     title="#{bundle.CreateDossierTitle_adresseActuelle}"
+                                     required="true" requiredMessage="Veuillez Saisir l'adresse Actuelle">
+                        
+                        </p:inputText>
+
+                    </p:panelGrid>
+                    <br/>
+                    <p:panelGrid columns="4">
+                        <p:outputLabel value="#{bundle.CreateDossierLabel_region}" for="region" style="display:block;width: 100px"/>
+                        <p:selectOneMenu id="region" value="#{dossierController.region}"  style="display:block;width:120px">
+                            <f:selectItems value="#{regionController.itemsAvailableSelectOne}"
+                                           var="regionItem"
+                                           itemValue="#{regionItem}"/>
+                            <p:ajax  process="region" listener="#{dossierController.regionChange()}" update="sousRegion" />
+                        </p:selectOneMenu>
+
+
+                        <p:outputLabel value="#{bundle.CreateRegionLabel_responsableRegion}" for="responsableRegion" />
+                        <p:selectOneMenu id="responsableRegion" value="#{dossierController.responsableRegion}" style="display:block;width:120px">
+                            <f:selectItems value="#{responsableRegionController.itemsAvailableSelectOne}"
+                                           var="responsableRegionItem"
+                                           itemValue="#{responsableRegionItem}"
+                                           itemLabel="#{responsableRegionItem.nom}--
+                                           #{responsableRegionItem.region.nomRegion}"/>
+                            <p:ajax  process="responsableRegion" listener="#{dossierController.responsableChange()}" update="sousResponsableRegion" />
+                        </p:selectOneMenu>  
+
+
+
+
+
+
+                        <p:outputLabel value="#{bundle.CreateSousResponsableRegionLabel_sousRegion}" for="sousRegion" style="display:block;width: 100px"/>
+                        <p:selectOneMenu id="sousRegion" value="#{dossierController.sousRegion}" style="display:block;width:120px">
+                            <f:selectItems value="#{dossierController.sousRegions}"
+                                           var="sousRegionItem"
+                                           itemValue="#{sousRegionItem}"/>
+                        </p:selectOneMenu>
+
+
+                        <p:outputLabel value="#{bundle.CreateSousRegionLabel_sousResponsableRegion}" for="sousResponsableRegion" />
+                        <p:selectOneMenu id="sousResponsableRegion" value="#{dossierController.sousResponsableRegion}" style="display:block;width:120px">
+                            <f:selectItems value="#{dossierController.sousResponsableRegions}"
+                                           var="sousResponsableRegionItem"
+                                           itemValue="#{sousResponsableRegionItem}"
+                                           itemLabel="#{sousResponsableRegionItem.nom}--#{sousResponsableRegionItem.sousRegion.nomRegion}"/>
+                        </p:selectOneMenu>
+
+                    </p:panelGrid> 
+
+
+                </p:fieldset>
+                <br/><br/>
+
+                <p:fieldset legend="Les Remarques Des assistantes" style="margin-left: 650px; margin-top: -190px;" >
+
+                    <p:panelGrid columns="4" style="margin-bottom:30px;margin-top: 20px" >
+                        <p:outputLabel value="#{bundle.CreateDossierLabel_assistanteSociale1}" for="assistanteSociale1" />
+                        <p:selectOneMenu id="assistanteSociale1" value="#{dossierController.assistanteSociale1}" >
+                            <f:selectItems value="#{assistanteSocialeController.itemsAvailableSelectOne}"
+                                           var="assistanteSociale1Item"
+                                           itemValue="#{assistanteSociale1Item}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateDossierLabel_assistanteSociale2}" for="assistanteSociale2" />
+                        <p:selectOneMenu id="assistanteSociale2" value="#{dossierController.assistanteSociale2}" >
+                            <f:selectItems value="#{assistanteSocialeController.itemsAvailableSelectOne}"
+                                           var="assistanteSociale2Item"
+                                           itemValue="#{assistanteSociale2Item}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateDossierLabel_remarque}" for="remarque" />
+                        <p:inputText id="remarque" value="#{dossierController.selected.remarque}" title="#{bundle.CreateDossierTitle_remarque}" />
+                        <p:outputLabel value="#{bundle.CreateDossierLabel_proposition}" for="proposition" />
+                        <p:inputText id="proposition" value="#{dossierController.selected.proposition}" title="#{bundle.CreateDossierTitle_proposition}" />
+
+                    </p:panelGrid>
+
+                </p:fieldset>
+
+                <br/> <br/>
+
+
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

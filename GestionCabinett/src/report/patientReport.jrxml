@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ff6d1440-9719-4fc2-9c5f-48b0d172f689">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="37"/>
+	<style name="style1" mode="Opaque"/>
+	<field name="nom" class="java.lang.String"/>
+	<field name="prenom" class="java.lang.String"/>
+	<field name="age" class="java.lang.Integer"/>
+	<field name="dateNaissance" class="java.util.Date"/>
+	<field name="pays" class="java.lang.String"/>
+	<field name="ville" class="java.lang.String"/>
+	<field name="dateEnregistrement" class="java.util.Date"/>
+	<field name="telMobile" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="77" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="cd37890f-9858-4f96-be12-5656e0ddbd7e" mode="Opaque" x="138" y="13" width="267" height="37" forecolor="#000000" backcolor="#FFFFCC"/>
+				<textElement>
+					<font fontName="SansSerif" size="26" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[La Liste Des Patients]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a6bfd777-99c4-47ac-9717-56ba510a1791" style="style1" mode="Opaque" x="0" y="0" width="69" height="20" forecolor="#990000" backcolor="#FFFFCC"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nom]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3784549b-7e6c-41a5-9111-251a36236c4f" style="style1" mode="Opaque" x="69" y="0" width="69" height="20" forecolor="#990000" backcolor="#FFFFCC"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prenom]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="06ddb7c4-f7fb-4c0f-a6df-6b3bdc6e4e38" style="style1" mode="Opaque" x="138" y="0" width="69" height="20" forecolor="#990000" backcolor="#FFFFCC"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cb88ed24-21ec-4979-90eb-07b1257174e9" style="style1" mode="Opaque" x="207" y="0" width="69" height="20" forecolor="#990000" backcolor="#FFFFCC"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date Naissance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5fa9c536-822f-4a60-9324-16f5e2958d0e" style="style1" mode="Opaque" x="276" y="0" width="69" height="20" forecolor="#990000" backcolor="#FFFFCC"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pays]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1e8fb8fa-844c-4e03-a691-eae1be70104f" style="style1" mode="Opaque" x="345" y="0" width="69" height="20" forecolor="#990000" backcolor="#FFFFCC"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ville]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e7eaf9f4-3037-4837-ad66-4a88c1c95e80" style="style1" mode="Opaque" x="414" y="0" width="69" height="20" forecolor="#990000" backcolor="#FFFFCC"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date Enregistrement]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="161dbccf-600d-4b74-8093-32fe4a5d50b7" style="style1" mode="Opaque" x="483" y="0" width="69" height="20" forecolor="#990000" backcolor="#FFFFCC"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tel Mobile]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement uuid="fd2f9e98-6cea-42e6-9a23-674146cb99d8" x="0" y="0" width="69" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="231e78b1-7b62-4442-87b5-f10dd2911807" x="69" y="0" width="69" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{prenom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9816230e-bfa2-4337-8f07-48fedd8c327d" x="138" y="0" width="69" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="60c791fa-5200-443d-88a0-8cdc8a8d61ce" x="207" y="0" width="69" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{dateNaissance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b0d6c366-faeb-45b3-9fdf-c72a708f03cc" x="276" y="0" width="69" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pays}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c0b03662-772d-43cf-af74-c8f7a8c65887" x="345" y="0" width="69" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ville}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="14f01719-157c-4fe0-8ec6-35e7f17d62da" x="414" y="0" width="69" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{dateEnregistrement}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f5558efb-570e-4a5c-a38c-aa80879ba748" x="483" y="0" width="69" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{telMobile}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

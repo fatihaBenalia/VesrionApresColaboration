@@ -1,0 +1,413 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" >
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+        <script language="JavaScript" type="text/JavaScript">
+            
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+    </h:head>
+    <h:body >
+        <p:layout fullPage="true">
+
+            <p:layoutUnit position="north" size="100" 
+                          resizable="" 
+                          closable="" collapsible="">
+
+                <div>
+                    <img src="Images/logo.jpg"  alt="" style="margin-top: -10px;" />
+                </div>
+
+            </p:layoutUnit>
+
+
+
+            <p:layoutUnit position="west" size="166" style="">
+
+                
+                <div><table class="menu" border="0" style="background-color: #bce8f1">
+  <tr>
+    <td class="menu01">
+         </td>
+
+  </tr>
+<tr>
+	<td class="menu02">
+            <img src="Images/Images.jpg" width="153" style="margin-top: -260px" />
+		<img src="Images/association.jpg" width="153" height="24"/><br/>
+      <a href="" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Historique','','Images/ss_historique_over.jpg',1)"><img src="Images/ss_historique.jpg" name="Historique" width="139" height="18" border="0"/></a>	
+      <a href="" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Membres','','Images/ss_membres_over.jpg',1)"><img src="Images/ss_membres.jpg" name="Membres" width="139" height="18" border="0"/></a><br/>
+    	<img src="Images/transp.gif" height="10"/><br/>
+      	<img src="Images/missions.jpg"/><br/>
+	  		<a href="" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Activit&eacute;s','','Images/ss_activites_over.jpg',1)">
+                            <img src="Images/ss_activites.jpg" name="Activités" width="139" height="18" border="0"/></a>	
+      		<a href="" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Projets','','Images/ss_projets_over.jpg',1)">
+                    <img src="Images/ss_projets.jpg" name="Projets" width="139" height="18" border="0"/></a>	
+      		<a href="" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Travail sur le terrain','','Images/ss_travail_over.jpg',1)">
+                    <img src="Images/ss_travail.jpg" name="Travail sur le terrain" width="139" height="18" border="0"/></a><br/>
+
+    	<img src="Images/transp.gif" height="10"/><br/>
+		<img src="Images/aider.jpg"/><br/>
+      		<a href="" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Parrainage','','Images/ss_parrainage_over.jpg',1)">
+                    <img src="Images/ss_parrainage.jpg" name="Parrainage" alt="Parrainage" width="139" height="18" border="0"/></a>	
+      		<a href="" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Dons','','Images/ss_dons_over.jpg',1)">
+                    <img src="Images/ss_dons.jpg" name="Dons" alt="Dons" width="139" height="18" border="0"/></a> 
+      		<a href="" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('B&eacute;n&eacute;volat','','Images/ss_benevolat_over.jpg',1)">
+                    <img src="Images/ss_benevolat.jpg" name="Bénévolat" width="139" height="18" border="0"/></a><br/>
+		<img src="Images/transp.gif" height="10"/><br/>
+		<img src="Images/informations.jpg"/><br/>
+      		<a href="" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Avantages fiscaux','','Images/ss_avantages_over.jpg',1)">
+                    <img src="Images/ss_avantages.jpg" name="Avantages fiscaux" width="139" height="18" border="0"/></a> 
+      <a href="" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Droits','','Images/ss_droits_over.jpg',1)">
+          <img src="Images/ss_droits.jpg" name="Droits" width="139" height="18" border="0"/></a> 
+<a href="lexique.php" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Lexique','','Images/ss_lexique_over.jpg',1)">
+    <img src="Images/ss_lexique.jpg" name="Lexique" width="139" height="18" border="0"/></a> 
+                <img src="Images/3.png" width="153"  />
+</td>
+</tr>
+
+</table>
+                   
+                </div>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="east" size="200"  
+                          >
+
+               
+
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+                <br />
+
+                
+                <div id="contenu"  style="margin-top: -60px"> <br/>
+  <img src="Images/association2.gif" alt="L'association et vous pour soutenir ensemble les orphelins"/> 
+  <table class="contenu" cellspacing="0" cellpadding="0" border="0" height="440">
+    <tr> 
+      <td class="texte" valign="top"> &nbsp; 
+        <span class="titre1">Historique</span><br/> <div class="verda10bleubr">Dates 
+          clés des différentes actions menées par l'association</div>
+
+        <br/> <div class="justify">
+            <table> <!-- (disposé dans la balise table) class="histo" cellspacing="0">-->
+            <tr> <!-- (disposé dans la balise tr d'avant) class="bgbleuc">-->
+<td> <!-- (disposé dans la balise td d'avant) class="verda10bleu">-->
+    L’association « <a href="http://www.don-parrainage-orphelin.org"><b><font color="green"> Les Petits Orphelins de l’Atlas</font></b></a> » est régie par loi de 1901 et a un but non lucratif.
+Elle a vu le jour en octobre 2002.<br/><br/>
+
+Elle a pour but de venir en aide aux orphelins de tous âges. Aussi bien aux nourrissons, qui sont pour la plupart abandonnés à la naissance, qu’aux personnes âgées sans familles. 
+
+Mais nos actions peuvent parfois aller au-delà, notamment lors de catastrophes naturelles telles que tremblements de terre.<br/><br/> 
+
+Nous essayons dans la mesure du possible de soutenir les associations ayant les mêmes objectifs que nous : le <font color="red"><b>bien-être de l’individu</b></font>.<br/><br/>
+
+Nous agissons prioritairement au Maroc et ponctuellement en Algérie et d'autres contrées : voir nos <a href="http://www.don-parrainage-orphelin.org/mission-humanitaire.php"><b>actions humanitaires</b></a>.<br/><br/><br/>
+
+<font color="red"> Parce que c’est un droit pour chacun d’entre nous de vivre dignement, l’association s’engage </font>
+</td>
+</tr>
+                </table>
+            </div>
+        </td>
+               </tr>
+          </table>
+
+        </div>
+    
+                <br />
+            </p:layoutUnit>
+
+        </p:layout>
+
+        <style>
+            h1#title {
+                font-family: 'Roboto Slab', serif;
+                font-weight: 300;
+                font-size: 3.2em;
+                color: white;
+                margin: 0 auto;
+                padding-top: 190px;
+                max-width: 300px;
+                text-align: center;
+
+                top: 0px;
+            }
+            .top{
+                margin: 0;
+                margin-top: -225px;
+                width: 100%;
+                background: -moz-linear-gradient(top,  rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', endColorstr='#00000000',GradientType=0);
+            }
+
+
+
+
+            h1#title span span {
+                font-weight: 400;
+            }
+
+            h2 {
+                text-transform: uppercase;
+                color: white;
+                font-weight: 400;
+                letter-spacing: 1px;
+                font-size: 1.4em;
+                line-height: 2.8em;
+            }
+
+            a {
+                text-decoration: none;
+                color: #666;
+            }
+
+            a:hover {
+                color: #aeaeae;
+            }
+
+            p.small {
+                font-size: 0.8em;
+                margin: 20px 0 0;
+            }
+
+
+            /* Layout */
+            .container {
+                margin: 0;
+            }
+
+
+
+            .login-box {
+                background-color: white;
+                max-width: 340px;
+                margin: 0 auto;
+                position: relative;
+                top: 20px;
+                padding-bottom: 30px;
+                border-radius: 5px;
+                box-shadow: 0 5px 50px rgba(0,0,0,0.4);
+                text-align: center;
+            }
+
+            .login-box .box-header {
+                background-color: #009fbc;
+                margin-top: 0;
+                border-radius: 5px 5px 0 0;
+            }
+
+            .login-box outputLabel {
+                font-weight: 700;
+                font-size: .8em;
+                color: #888;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                line-height: 2em;
+            }
+
+            .login-box outputLabel {
+                margin-bottom: 20px;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 2px;
+                font-size: .9em;
+                color: #665851;
+            }
+
+            .login-box outputLabel:focus {
+                outline: none;
+                border-color: #665851;
+                transition: 0.5s;
+                color: #665851;
+            }
+
+            .login-box commandButton {
+                margin-top: 0px;
+                border: 0;
+                border-radius: 2px;
+                color: white;
+                padding: 10px;
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: 0.7em;
+                letter-spacing: 1px;
+                background-color: #665851;
+                cursor:pointer;
+                outline: none;
+            }
+
+
+            .login-box commandButton:hover {
+                opacity: 0.7;
+                transition: 0.5s;
+            }
+
+            .login-box commandButton:hover {
+                opacity: 0.7;
+                transition: 0.5s;
+            }
+
+            .selected {
+                color: #665851!important;
+                transition: 0.5s;
+            }
+
+            /* Animation Delay */
+            #logo {
+                -webkit-animation-duration: 1s;
+                -webkit-animation-delay: 2s;
+            }
+
+            .login-box {
+                -webkit-animation-duration: 1s;
+                -webkit-animation-delay: 1s;
+            }     
+
+            .commandButton {
+
+                margin-left:490px ;
+                border: 0;
+                border-radius: 2px;
+                color: white;
+                padding: 10px;
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: 0.7em;
+                letter-spacing: 1px;
+                background-color: #665851;
+                cursor:pointer;
+                outline: none;
+            }       
+
+
+
+
+
+
+
+
+
+        </style>
+        <br />
+        <h:link outcome="/utilisateur/List" value="Show All Utilisateur Items"/>
+        <br />
+        <h:link outcome="/utilisateur/List" value="Show All Utilisateur Items"/>
+        <br />
+        <h:link outcome="/punition/List" value="Show All Punition Items"/>
+    </h:body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
+

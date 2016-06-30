@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="HeritageItemEditDlg" widgetVar="HeritageItemEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditHeritageItemTitle}">
+            <h:form id="HeritageItemEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{heritageItemController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditHeritageItemLabel_dossier}" for="dossier" />
+                        <p:selectOneMenu id="dossier" value="#{heritageItemController.selected.dossier}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{dossierController.itemsAvailableSelectOne}"
+                                           var="dossierItem"
+                                           itemValue="#{dossierItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditHeritageItemLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{heritageItemController.selected.id}" title="#{bundle.EditHeritageItemTitle_id}" />
+                        <p:outputLabel value="#{bundle.EditHeritageItemLabel_typeHeritage}" for="typeHeritage" />
+                        <p:inputText id="typeHeritage" value="#{heritageItemController.selected.typeHeritage}" title="#{bundle.EditHeritageItemTitle_typeHeritage}" />
+                        <p:outputLabel value="#{bundle.EditHeritageItemLabel_type}" for="type" />
+                        <p:inputText id="type" value="#{heritageItemController.selected.type}" title="#{bundle.EditHeritageItemTitle_type}" />
+                        <p:outputLabel value="#{bundle.EditHeritageItemLabel_typePossession}" for="typePossession" />
+                        <p:inputText id="typePossession" value="#{heritageItemController.selected.typePossession}" title="#{bundle.EditHeritageItemTitle_typePossession}" />
+                        <p:outputLabel value="#{bundle.EditHeritageItemLabel_methodeUtilisation}" for="methodeUtilisation" />
+                        <p:inputText id="methodeUtilisation" value="#{heritageItemController.selected.methodeUtilisation}" title="#{bundle.EditHeritageItemTitle_methodeUtilisation}" />
+                        <p:outputLabel value="#{bundle.EditHeritageItemLabel_montant}" for="montant" />
+                        <p:inputText id="montant" value="#{heritageItemController.selected.montant}" title="#{bundle.EditHeritageItemTitle_montant}" />
+                        <p:outputLabel value="#{bundle.EditHeritageItemLabel_blemsApresDeces}" for="blemsApresDeces" />
+                        <p:inputText id="blemsApresDeces" value="#{heritageItemController.selected.blemsApresDeces}" title="#{bundle.EditHeritageItemTitle_blemsApresDeces}" />
+                        <p:outputLabel value="#{bundle.EditHeritageItemLabel_resultatsDecision}" for="resultatsDecision" />
+                        <p:inputText id="resultatsDecision" value="#{heritageItemController.selected.resultatsDecision}" title="#{bundle.EditHeritageItemTitle_resultatsDecision}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{heritageItemController.update}" value="#{bundle.Save}" update="display,:HeritageItemListForm:datalist,:growl" oncomplete="handleSubmit(args, 'HeritageItemEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="HeritageItemEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

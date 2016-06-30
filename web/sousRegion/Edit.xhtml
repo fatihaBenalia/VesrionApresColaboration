@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="SousRegionEditDlg" widgetVar="SousRegionEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditSousRegionTitle}">
+            <h:form id="SousRegionEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{sousRegionController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditSousRegionLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{sousRegionController.selected.id}" title="#{bundle.EditSousRegionTitle_id}" />
+                        <p:outputLabel value="#{bundle.EditSousRegionLabel_nomRegion}" for="nomRegion" />
+                        <p:inputText id="nomRegion" value="#{sousRegionController.selected.nomRegion}" title="#{bundle.EditSousRegionTitle_nomRegion}" />
+                        <p:outputLabel value="#{bundle.EditSousRegionLabel_region}" for="region" />
+                        <p:selectOneMenu id="region" value="#{sousRegionController.selected.region}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{regionController.itemsAvailableSelectOne}"
+                                           var="regionItem"
+                                           itemValue="#{regionItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditSousRegionLabel_sousResponsableRegion}" for="sousResponsableRegion" />
+                        <p:selectOneMenu id="sousResponsableRegion" value="#{sousRegionController.selected.sousResponsableRegion}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{sousResponsableRegionController.itemsAvailableSelectOne}"
+                                           var="sousResponsableRegionItem"
+                                           itemValue="#{sousResponsableRegionItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{sousRegionController.update}" value="#{bundle.Save}" update="display,:SousRegionListForm:datalist,:growl" oncomplete="handleSubmit(args, 'SousRegionEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="SousRegionEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

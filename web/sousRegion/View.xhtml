@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="SousRegionViewDlg" widgetVar="SousRegionViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewSousRegionTitle}">
+            <h:form id="SousRegionViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{sousRegionController.selected != null}">
+                        <h:outputText value="#{bundle.ViewSousRegionLabel_id}"/>
+                        <h:outputText value="#{sousRegionController.selected.id}" title="#{bundle.ViewSousRegionTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewSousRegionLabel_nomRegion}"/>
+                        <h:outputText value="#{sousRegionController.selected.nomRegion}" title="#{bundle.ViewSousRegionTitle_nomRegion}"/>
+                        <h:outputText value="#{bundle.ViewSousRegionLabel_region}"/>
+                        <h:outputText value="#{sousRegionController.selected.region}" title="#{bundle.ViewSousRegionTitle_region}"/>
+                        <h:outputText value="#{bundle.ViewSousRegionLabel_sousResponsableRegion}"/>
+                        <h:outputText value="#{sousRegionController.selected.sousResponsableRegion}" title="#{bundle.ViewSousRegionTitle_sousResponsableRegion}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="SousRegionViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

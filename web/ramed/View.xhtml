@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="RamedViewDlg" widgetVar="RamedViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewRamedTitle}">
+            <h:form id="RamedViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{ramedController.selected != null}">
+                        <h:outputText value="#{bundle.ViewRamedLabel_dossier}"/>
+                        <h:outputText value="#{ramedController.selected.dossier}" title="#{bundle.ViewRamedTitle_dossier}"/>
+                        <h:outputText value="#{bundle.ViewRamedLabel_id}"/>
+                        <h:outputText value="#{ramedController.selected.id}" title="#{bundle.ViewRamedTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewRamedLabel_carte}"/>
+                        <h:outputText value="#{ramedController.selected.carte}" title="#{bundle.ViewRamedTitle_carte}"/>
+                        <h:outputText value="#{bundle.ViewRamedLabel_dateFin}"/>
+                        <h:outputText value="#{ramedController.selected.dateFin}" title="#{bundle.ViewRamedTitle_dateFin}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewRamedLabel_numCarte}"/>
+                        <h:outputText value="#{ramedController.selected.numCarte}" title="#{bundle.ViewRamedTitle_numCarte}"/>
+                        <h:outputText value="#{bundle.ViewRamedLabel_beneficiares}"/>
+                        <h:outputText value="#{ramedController.selected.beneficiares}" title="#{bundle.ViewRamedTitle_beneficiares}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="RamedViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

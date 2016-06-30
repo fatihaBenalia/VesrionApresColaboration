@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="OperationCaisseEditDlg" widgetVar="OperationCaisseEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditOperationCaisseTitle}">
+            <h:form id="OperationCaisseEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{operationCaisseController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditOperationCaisseLabel_montant}" for="montant" />
+                        <p:inputText id="montant" value="#{operationCaisseController.selected.montant}" title="#{bundle.EditOperationCaisseTitle_montant}" />
+                        <p:outputLabel value="#{bundle.EditOperationCaisseLabel_caisse}" for="caisse" />
+                        <p:selectOneMenu id="caisse" value="#{operationCaisseController.selected.caisse}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{caisseController.itemsAvailableSelectOne}"
+                                           var="caisseItem"
+                                           itemValue="#{caisseItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditOperationCaisseLabel_dateOperation}" for="dateOperation" />
+                        <p:calendar id="dateOperation" pattern="MM/dd/yyyy" value="#{operationCaisseController.selected.dateOperation}" title="#{bundle.EditOperationCaisseTitle_dateOperation}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditOperationCaisseLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{operationCaisseController.selected.id}" title="#{bundle.EditOperationCaisseTitle_id}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{operationCaisseController.update}" value="#{bundle.Save}" update="display,:OperationCaisseListForm:datalist,:growl" oncomplete="handleSubmit(args, 'OperationCaisseEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="OperationCaisseEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

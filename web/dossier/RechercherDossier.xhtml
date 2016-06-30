@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListPereTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <br/>
+
+            <h:form id="dossierListFormSearch">
+
+                <p:fieldset legend="Outils de recherche" style="margin-right: 950px">
+                    <br/>
+                    <p:panelGrid columns="2" >   
+                        <p:outputLabel value="Nombre Minimum Orphelins:" for="nbrMin" />
+                        <p:inputText id="nbrMin" value="#{dossierController.nbrMin}" title="Nombre" style="display:block;width: 70px"/>
+                        <p:outputLabel value="Nombre Maximum Orphelins:" for="nbrMax" />
+                        <p:inputText id="nbrMax" value="#{dossierController.nbrMax}" title="Nombre" style="display:block;width: 70px"/>
+
+                        <p:outputLabel value="La Region   :" for="region" />
+                        <p:selectOneMenu id="region" value="#{dossierController.regionn}"  style="display:block;width: 100px">
+
+                            <f:selectItem  itemLabel="--select--" itemValue="#{null}"/>
+                            <f:selectItems value="#{regionController.itemsAvailableSelectOne}" 
+                                           var="regionItem"
+                                           itemValue="#{regionItem}"/>
+
+                        </p:selectOneMenu>
+
+                        <p:outputLabel value="le sexe" for="sexe"/>
+                        <p:selectOneMenu id="sexe" value="#{dossierController.sexe}" 
+                                         style="display:block;width: 100px">
+
+                            <f:selectItem  itemLabel="--select--"/>
+                            <f:selectItem itemValue="fille" itemLabel="Fille"/>
+                            <f:selectItem itemValue="Garçon" itemLabel="Garçon"/>
+                        </p:selectOneMenu>
+
+
+
+                        <p:outputLabel value="Type des Orphelins" for="type" />
+                        <p:selectOneMenu id="type" style="display:block;width: 100px"
+                                         value="#{dossierController.type}"
+                                         >
+
+                            <f:selectItem itemValue="-1"  itemLabel="--select--"/>
+                            <f:selectItem itemValue="1"  itemLabel="Etudiants"/>
+                            <f:selectItem itemValue="2"  itemLabel="Scolarisés"/>
+                            <f:selectItem itemValue="3"  itemLabel="En Formation"/>
+                            <f:selectItem itemValue="4"  itemLabel="Non Formé"/>
+                        </p:selectOneMenu>
+
+                        <p:outputLabel value="L'Age Minimum  :" for="ageMin" />
+                        <p:inputText id="ageMin" value="#{dossierController.ageMin}" title="Age" style="display:block;width: 70px" />
+                        <p:outputLabel value="L'Age Maximum  :" for="ageMax" />
+                        <p:inputText id="ageMax" value="#{dossierController.ageMax}" title="Age" style="display:block;width: 70px"/>
+
+                    </p:panelGrid>
+                    <br/>
+                    <p:commandButton value="-- Rechercher --" actionListener="#{dossierController.rechercher()}" 
+                                     update=":dossierListForm:datalist"  
+                                     style="width: 120px;height: 40px"/>
+
+                </p:fieldset>
+            </h:form>
+            <br/>
+            <h:form id="dossierListForm">
+                <p:fieldset legend="La Liste Des Dossiers" style="margin-left: 350px;margin-top: -370px">
+
+                    <p:panel header="#{bundle.ListDossierTitle}">
+                        <p:dataTable id="datalist" value="#{dossierController.items}" var="item"
+                                     selectionMode="single" selection="#{dossierController.selected}"
+                                     paginator="true"
+                                     rowKey="#{item.id}"
+                                     rows="10"
+                                     rowsPerPageTemplate="10,20,30,40,50"
+                                     >
+
+
+                            <p:column width="">
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListDossierTitle_numero}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.numero}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListDossierTitle_nomFamille}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.nomFamille}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListDossierTitle_dateDossier}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.dateDossier}">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:outputText>
+                            </p:column>
+
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListDossierTitle_responsableFamille}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.responsableFamille.nom}--#{item.responsableFamille.prenom}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListDossierTitle_responsableFamille}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.responsableFamille.id}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListDossierTitle_responsableRegion}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.responsableRegion.nom}--#{item.responsableRegion.prenom}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListDossierTitle_region}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.region}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListDossierTitle_adresseActuelle}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.adresseActuelle}"/>
+                            </p:column>
+
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Actions"/>
+                                </f:facet>
+                                <p:commandButton value="AjoutParrainage"  title="Ajouter Parrainage"
+                                                 actionListener ="#{parrinageController.ajouterParrainage(item)}"
+                                                 oncomplete="PF('ParrinageCreateDialog').show()" />
+
+
+
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Détails"/>
+                                </f:facet>
+                                <p:commandButton title="Membres"  
+                                                 value="Membres"
+                                                 actionListener ="#{dossierController.allMembres(item)}"
+                                                 update=":dossierListForm:ListMembre"
+                                                 />
+                                <p:commandButton title="Orphelins"  
+                                                 value="Orphelins"
+                                                 actionListener ="#{dossierController.allOrphelins(item)}"
+                                                 update=":dossierListForm:dataListOrphelin"
+                                                 />
+
+                            </p:column>
+                        </p:dataTable>
+                    </p:panel>
+
+                </p:fieldset>
+                <br/><br/><br/>
+
+                <p:fieldset legend="La Liste des Membres" style="margin-right: 700px">
+                    <p:panel header="#{bundle.ListMembreTitle}"
+                             >
+                        <p:dataTable id="ListMembre" value="#{dossierController.selected.membres}" var="item"
+                                     selectionMode="single" 
+                                     paginator="true"
+                                     rowKey="#{item.id}"
+                                     rows="10"
+                                     rowsPerPageTemplate="10,20,30,40,50"
+                                     >
+
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListMembreTitle_nom}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.nom}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListMembreTitle_prenom}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.prenom}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListMembreTitle_relationOrphelin}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.relationOrphelin}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListMembreTitle_dateNaissance}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.dateNaissance}">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:outputText>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListMembreTitle_profession}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.profession}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListMembreTitle_typeMetier}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.typeMetier}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListMembreTitle_niveauScolaire}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.niveauScolaire}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListMembreTitle_recruteur}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.recruteur}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListMembreTitle_ecole}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.ecole}"/>
+                            </p:column>
+
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListMembreTitle_depenses}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.depenses}"/>
+                            </p:column>
+
+                        </p:dataTable>
+                    </p:panel>
+                </p:fieldset>
+                <br/>
+
+
+                <p:fieldset legend="La Liste des Orphelins " style="margin-top: -220px;margin-left: 600px">
+                    <p:panel header="#{bundle.ListOrphelinTitle}"  
+                             >
+                        <p:dataTable id="dataListOrphelin" value="#{dossierController.selected.orphelins}" var="item"
+                                     selectionMode="single" 
+                                     paginator="true"
+                                     rowKey="#{item.prenom}" 
+                                     rows="10"
+                                     rowsPerPageTemplate="10,20,30,40,50"
+                                     >
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListOrphelinTitle_nom}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.nom}--#{item.prenom}"/>
+                            </p:column>
+                            
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListOrphelinTitle_dateNaissance}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.dateNaissance}"/>
+                            </p:column>
+
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListOrphelinTitle_dossier}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.dossier.numero}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListOrphelinTitle_niveauScolaire}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.niveauScolaire}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="type Profession"/>
+                                </f:facet>
+                                <h:outputText value="#{item.typeFormation}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.ListOrphelinTitle_capacite}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.capacite}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Profession"/>
+                                </f:facet>
+                                <h:outputText value="#{item.raisonNonTravail}"/>
+                            </p:column>
+
+                            
+
+                        </p:dataTable>
+                    </p:panel>
+
+                </p:fieldset>
+
+                
+
+
+
+
+
+            </h:form>
+            <ui:include src="Create_Parrinage.xhtml"/>
+        </ui:define>
+
+    </ui:composition>
+
+</html>

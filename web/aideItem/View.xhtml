@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AideItemViewDlg" widgetVar="AideItemViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewAideItemTitle}">
+            <h:form id="AideItemViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{aideItemController.selected != null}">
+                        <h:outputText value="#{bundle.ViewAideItemLabel_aide}"/>
+                        <h:outputText value="#{aideItemController.selected.aide}" title="#{bundle.ViewAideItemTitle_aide}"/>
+                        <h:outputText value="#{bundle.ViewAideItemLabel_ressource}"/>
+                        <h:outputText value="#{aideItemController.selected.ressource}" title="#{bundle.ViewAideItemTitle_ressource}"/>
+                        <h:outputText value="#{bundle.ViewAideItemLabel_relation}"/>
+                        <h:outputText value="#{aideItemController.selected.relation}" title="#{bundle.ViewAideItemTitle_relation}"/>
+                        <h:outputText value="#{bundle.ViewAideItemLabel_type}"/>
+                        <h:outputText value="#{aideItemController.selected.type}" title="#{bundle.ViewAideItemTitle_type}"/>
+                        <h:outputText value="#{bundle.ViewAideItemLabel_quantite}"/>
+                        <h:outputText value="#{aideItemController.selected.quantite}" title="#{bundle.ViewAideItemTitle_quantite}"/>
+                        <h:outputText value="#{bundle.ViewAideItemLabel_duree}"/>
+                        <h:outputText value="#{aideItemController.selected.duree}" title="#{bundle.ViewAideItemTitle_duree}"/>
+                        <h:outputText value="#{bundle.ViewAideItemLabel_montantMensuelle}"/>
+                        <h:outputText value="#{aideItemController.selected.montantMensuelle}" title="#{bundle.ViewAideItemTitle_montantMensuelle}"/>
+                        <h:outputText value="#{bundle.ViewAideItemLabel_raisonAide}"/>
+                        <h:outputText value="#{aideItemController.selected.raisonAide}" title="#{bundle.ViewAideItemTitle_raisonAide}"/>
+                        <h:outputText value="#{bundle.ViewAideItemLabel_commentaire}"/>
+                        <h:outputText value="#{aideItemController.selected.commentaire}" title="#{bundle.ViewAideItemTitle_commentaire}"/>
+                        <h:outputText value="#{bundle.ViewAideItemLabel_id}"/>
+                        <h:outputText value="#{aideItemController.selected.id}" title="#{bundle.ViewAideItemTitle_id}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="AideItemViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

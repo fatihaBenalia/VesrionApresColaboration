@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="PunitionViewDlg" widgetVar="PunitionViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewPunitionTitle}">
+            <h:form id="PunitionViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{punitionController.selected != null}">
+                        <h:outputText value="#{bundle.ViewPunitionLabel_raison}"/>
+                        <h:outputText value="#{punitionController.selected.raison}" title="#{bundle.ViewPunitionTitle_raison}"/>
+                        <h:outputText value="#{bundle.ViewPunitionLabel_id}"/>
+                        <h:outputText value="#{punitionController.selected.id}" title="#{bundle.ViewPunitionTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewPunitionLabel_dateDebut}"/>
+                        <h:outputText value="#{punitionController.selected.dateDebut}" title="#{bundle.ViewPunitionTitle_dateDebut}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewPunitionLabel_dateFin}"/>
+                        <h:outputText value="#{punitionController.selected.dateFin}" title="#{bundle.ViewPunitionTitle_dateFin}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewPunitionLabel_duree}"/>
+                        <h:outputText value="#{punitionController.selected.duree}" title="#{bundle.ViewPunitionTitle_duree}"/>
+                        <h:outputText value="#{bundle.ViewPunitionLabel_dossier}"/>
+                        <h:outputText value="#{punitionController.selected.dossier}" title="#{bundle.ViewPunitionTitle_dossier}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="PunitionViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

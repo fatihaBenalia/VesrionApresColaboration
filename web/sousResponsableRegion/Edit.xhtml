@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="SousResponsableRegionEditDlg" widgetVar="SousResponsableRegionEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditSousResponsableRegionTitle}">
+            <h:form id="SousResponsableRegionEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{sousResponsableRegionController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditSousResponsableRegionLabel_sousRegion}" for="sousRegion" />
+                        <p:selectOneMenu id="sousRegion" value="#{sousResponsableRegionController.selected.sousRegion}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{sousRegionController.itemsAvailableSelectOne}"
+                                           var="sousRegionItem"
+                                           itemValue="#{sousRegionItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditSousResponsableRegionLabel_responsableRegion}" for="responsableRegion" />
+                        <p:selectOneMenu id="responsableRegion" value="#{sousResponsableRegionController.selected.responsableRegion}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{responsableRegionController.itemsAvailableSelectOne}"
+                                           var="responsableRegionItem"
+                                           itemValue="#{responsableRegionItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditSousResponsableRegionLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{sousResponsableRegionController.selected.id}" title="#{bundle.EditSousResponsableRegionTitle_id}" />
+                        <p:outputLabel value="#{bundle.EditSousResponsableRegionLabel_nom}" for="nom" />
+                        <p:inputText id="nom" value="#{sousResponsableRegionController.selected.nom}" title="#{bundle.EditSousResponsableRegionTitle_nom}" />
+                        <p:outputLabel value="#{bundle.EditSousResponsableRegionLabel_prenom}" for="prenom" />
+                        <p:inputText id="prenom" value="#{sousResponsableRegionController.selected.prenom}" title="#{bundle.EditSousResponsableRegionTitle_prenom}" />
+                        <p:outputLabel value="#{bundle.EditSousResponsableRegionLabel_gmail}" for="gmail" />
+                        <p:inputText id="gmail" value="#{sousResponsableRegionController.selected.gmail}" title="#{bundle.EditSousResponsableRegionTitle_gmail}" />
+                        <p:outputLabel value="#{bundle.EditSousResponsableRegionLabel_tele}" for="tele" />
+                        <p:inputText id="tele" value="#{sousResponsableRegionController.selected.tele}" title="#{bundle.EditSousResponsableRegionTitle_tele}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{sousResponsableRegionController.update}" value="#{bundle.Save}" update="display,:SousResponsableRegionListForm:datalist,:growl" oncomplete="handleSubmit(args, 'SousResponsableRegionEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="SousResponsableRegionEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

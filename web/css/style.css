@@ -1,0 +1,206 @@
+td {
+	COLOR: #011853; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px;
+}
+
+/*
+**	Font
+*/
+
+/* 10px */
+.verda10bleu { COLOR: #4A5399; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; TEXT-ALIGN: center; }
+.verda10bleub { COLOR: #4A5399; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-WEIGHT: bold;}
+.verda10bleubc { COLOR: #4A5399; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-WEIGHT: bold; TEXT-ALIGN: center; }
+.verda10bleubr { COLOR: #4A5399; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; TEXT-ALIGN: right; FONT-WEIGHT: bold; }
+.verda10bleuf { COLOR: #011853; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; }
+.verda10bleufb { COLOR: #011853; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-WEIGHT: bold; }
+.verda10noir { COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; }
+.verda10noirb { COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-WEIGHT: bold; }
+.verda10rouge { COLOR: red; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; }
+.verda10orgb {	COLOR: #CA8A2B;	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;	FONT-SIZE: 10px; FONT-WEIGHT: bold; }
+.verda10roseb { COLOR: #AA5D7C; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-WEIGHT: bold; }
+.verda10rg { COLOR: #8F283B; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; }
+.verda10rgb { COLOR: #8F283B;FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-WEIGHT: bold; }
+.verda10vtb { COLOR: #4C7547; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-WEIGHT: bold; }
+
+/* 11px */
+.verda11noirb { COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-WEIGHT: bold; }
+.verda11vtb { COLOR: #4C7547; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-WEIGHT: bold; }
+
+/* 12px */
+.verda12jaune { COLOR: #FFB709; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; }
+.verda12noir { COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; }
+.verda12noirb { COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; }
+.verda12bleub { COLOR: #666699; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; }
+.verda12noiri {	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: italic; }
+.verda12blue { COLOR: #666699; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; }
+.verda12marron { COLOR: #DCAC75; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-ALIGN: left; }
+
+/* 13px */
+.verda13blanc {	COLOR: #FFFFFF; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 13px; FONT-WEIGHT: bold; }
+.titre1 { COLOR: #4F5476; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 13px; FONT-WEIGHT: bold; }
+.titre2 { COLOR: #DC9F0D; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 13px; FONT-WEIGHT: bold; }
+.titre3 { COLOR: #882B2B; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 13px; FONT-WEIGHT: bold; }
+.titre4 { COLOR: #408543; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 13px; FONT-WEIGHT: bold; }
+
+/* 14px */
+.verda14blue { COLOR: #436CF3; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 14px; FONT-WEIGHT: bold; TEXT-ALIGN: right; }
+.verda14rouge { COLOR: red; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 14px; FONT-WEIGHT: bold; TEXT-ALIGN: right; }
+.verda14vert { COLOR: green; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 14px; FONT-WEIGHT: bold; TEXT-ALIGN: right; }
+.verda14jaune { COLOR: #FFB709; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 14px; FONT-WEIGHT: bold; TEXT-ALIGN: right; }
+
+
+
+/* Liens */
+
+A.verda10marron:link {	COLOR: #694536;	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;	FONT-SIZE: 10px; TEXT-DECORATION: none;	FONT-WEIGHT: bold; }
+A.verda10marron:visited { COLOR: #694536; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; TEXT-DECORATION: none; FONT-WEIGHT: bold; }
+A.verda10marron:active { COLOR: #694536; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; TEXT-DECORATION: none; FONT-WEIGHT: bold; }
+A.verda10marron:hover { COLOR: #694536; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; TEXT-DECORATION: underline; font-weight: bold; }
+
+A.verda11black:link { COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none; }
+A.verda11black:visited { COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none; }
+A.verda11black:active {	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none; }
+A.verda11black:hover { COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: underline; }
+
+A.verda11blu:link {	COLOR: #444695;	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;	FONT-SIZE: 11px; TEXT-DECORATION: none; FONT-WEIGHT: bold; }
+A.verda11blu:visited { COLOR: #444695; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; TEXT-DECORATION: none; FONT-WEIGHT: bold; }
+A.verda11blu:active { COLOR: #444695; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; TEXT-DECORATION: none; FONT-WEIGHT: bold; }
+A.verda11blu:hover { COLOR: #444695; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; TEXT-DECORATION: underline; FONT-WEIGHT: bold; }
+
+A.verda11org:link {	COLOR: #CA8A2B;	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;	FONT-SIZE: 11px; TEXT-DECORATION: none; FONT-WEIGHT: bold; }
+A.verda11org:visited { COLOR: #CA8A2B; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; TEXT-DECORATION: none; FONT-WEIGHT: bold; }
+A.verda11org:active { COLOR: #CA8A2B; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; TEXT-DECORATION: none; FONT-WEIGHT: bold; }
+A.verda11org:hover { COLOR: #CA8A2B; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; TEXT-DECORATION: underline; FONT-WEIGHT: bold; }
+
+A.verda11rg:link {	COLOR: #AA5D7C;	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;	FONT-SIZE: 11px; TEXT-DECORATION: none; FONT-WEIGHT: bold; }
+A.verda11rg:visited { COLOR: #AA5D7C; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; TEXT-DECORATION: none; FONT-WEIGHT: bold; }
+A.verda11rg:active { COLOR: #AA5D7C; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; TEXT-DECORATION: none; FONT-WEIGHT: bold; }
+A.verda11rg:hover { COLOR: #AA5D7C; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; TEXT-DECORATION: underline; FONT-WEIGHT: bold; }
+
+A.verda12blu:link {	COLOR: #444695;	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;	FONT-SIZE: 12px; TEXT-DECORATION: none;	FONT-WEIGHT: bold; }
+A.verda12blu:visited { COLOR: #444695; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none; FONT-WEIGHT: bold; }
+A.verda12blu:active { COLOR: #444695; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none; FONT-WEIGHT: bold; }
+A.verda12blu:hover { COLOR: #444695; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: underline; font-weight: bold; }
+
+A.verda12marron:link {	COLOR: #DCAC75;	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;	FONT-SIZE: 12px; TEXT-DECORATION: none;	FONT-WEIGHT: bold; }
+A.verda12marron:visited { COLOR: #DCAC75; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none; FONT-WEIGHT: bold; }
+A.verda12marron:active { COLOR: #DCAC75; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none; FONT-WEIGHT: bold; }
+A.verda12marron:hover { COLOR: #DCAC75; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: underline; font-weight: bold; }
+
+A.verda13blanc:link { COLOR: #FFFFFF; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 13px; TEXT-DECORATION: none; }
+A.verda13blanc:visited { COLOR: #FFFFFF; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 13px; TEXT-DECORATION: none; }
+A.verda13blanc:active {	COLOR: #FFFFFF; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 13px; TEXT-DECORATION: none; }
+A.verda13blanc:hover { COLOR: #FFFFFF; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 13px; TEXT-DECORATION: underline; }
+
+A.lien1:link { COLOR: #FFFFFF; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 29px; TEXT-DECORATION: none; }
+A.lien1:visited { COLOR: #FFFFFF; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 29px; TEXT-DECORATION: none; }
+A.lien1:active {	COLOR: #FFFFFF; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 29px; TEXT-DECORATION: none; }
+A.lien1:hover { COLOR: #FFFFFF; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 29px; TEXT-DECORATION: underline; }
+
+A.lien2:link { COLOR: #FFFFFF; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none; }
+A.lien2:visited { COLOR: #FFFFFF; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none; }
+A.lien2:active {	COLOR: #FFFFFF; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none; }
+A.lien2:hover { COLOR: #FFFFFF; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: underline; }
+
+A.lien3:link { COLOR: #8D7867; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none; }
+A.lien3:visited { COLOR: #8D7867; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none; }
+A.lien3:active {	COLOR: #8D7867; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none; }
+A.lien3:hover { COLOR: #8D7867; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: underline; }
+
+A.lien4:link { COLOR: #8D7867; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none; }
+A.lien4:visited { COLOR: #8D7867; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none; }
+A.lien4:active {	COLOR: #8D7867; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none; }
+A.lien4:hover { COLOR: #8D7867; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: underline; }
+
+
+/*
+** Classes
+*/
+
+.accueil01 { width:180px; vertical-align:top; }
+.accueil02 { width:190px; border:0px; text-align:center; }
+.accueil03 {  width:180px; }
+
+.bgbleuc { background-color:#DEE2F6; }
+.center { text-align:center; }
+.colspan { column-span:2;}
+.contenu { width:586px; text-align:justify;}
+.gallerie {  width:50%; border:0px;}
+.histo { width:500px; text-align:center; }
+.ligne { color: #C1999D; text-align:center; width:80%; }
+
+.menu { width:175px; height:512px; background-image: url(images/menu/arche1.jpg); background-repeat: no-repeat; }
+.menu01 { height:122px; text-align:center; vertical-align:middle; }
+.menu02 { text-align:center; vertical-align:top; }
+
+.parrain01 { width:178px; height:21px; }
+.parrain02 {  width:384px; }
+.parrain03 {  height:28px; }
+.parrain04 {  height:21px; }
+.parrain05 {  height:75px;  }
+
+
+.right { text-align:right; }
+
+.texte_deb { padding-left: 10px; }
+.texte_fin { padding-right: 10px; }
+.texte { padding-left: 10px; padding-right: 10px;}
+.texte_a { padding-left: 10px; padding-right: 10px; width:356px; vertical-align:top; }
+
+p.inter { margin-bottom:220px; }
+
+
+
+/*
+**	Calques
+*/
+
+#bas {
+	position:absolute;
+	top:480px;
+	left:15px;
+}
+
+#contenu_a {
+	top:168px;
+	left:179px;
+	position:absolute;
+	background-image: url(images/contenu.jpg);
+	background-repeat: no-repeat;
+}
+
+#contenu {
+	top:173px;
+	left:179px;
+	position:absolute;
+	background-image: url(images/contenu1.jpg);
+	background-repeat: no-repeat;
+}
+
+#contenu1 {
+	top:171px;
+	left:179px;
+	position:absolute;
+	background-image: url(images/contenu2.jpg);
+	background-repeat: no-repeat;
+}
+
+#contenu2 {
+	top:168px;
+	left:179px;
+	position:absolute;
+	background-image: url(images/contenu3.jpg);
+	background-repeat: no-repeat;
+}
+
+#menu {
+	top:0px;
+	left:0px;
+	position:relative;
+}
+
+#top {
+	top:0px;
+	left:0px;
+	
+}

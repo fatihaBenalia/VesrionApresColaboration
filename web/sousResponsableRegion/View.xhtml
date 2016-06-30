@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="SousResponsableRegionViewDlg" widgetVar="SousResponsableRegionViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewSousResponsableRegionTitle}">
+            <h:form id="SousResponsableRegionViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{sousResponsableRegionController.selected != null}">
+                        <h:outputText value="#{bundle.ViewSousResponsableRegionLabel_sousRegion}"/>
+                        <h:outputText value="#{sousResponsableRegionController.selected.sousRegion}" title="#{bundle.ViewSousResponsableRegionTitle_sousRegion}"/>
+                        <h:outputText value="#{bundle.ViewSousResponsableRegionLabel_responsableRegion}"/>
+                        <h:outputText value="#{sousResponsableRegionController.selected.responsableRegion}" title="#{bundle.ViewSousResponsableRegionTitle_responsableRegion}"/>
+                        <h:outputText value="#{bundle.ViewSousResponsableRegionLabel_id}"/>
+                        <h:outputText value="#{sousResponsableRegionController.selected.id}" title="#{bundle.ViewSousResponsableRegionTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewSousResponsableRegionLabel_nom}"/>
+                        <h:outputText value="#{sousResponsableRegionController.selected.nom}" title="#{bundle.ViewSousResponsableRegionTitle_nom}"/>
+                        <h:outputText value="#{bundle.ViewSousResponsableRegionLabel_prenom}"/>
+                        <h:outputText value="#{sousResponsableRegionController.selected.prenom}" title="#{bundle.ViewSousResponsableRegionTitle_prenom}"/>
+                        <h:outputText value="#{bundle.ViewSousResponsableRegionLabel_gmail}"/>
+                        <h:outputText value="#{sousResponsableRegionController.selected.gmail}" title="#{bundle.ViewSousResponsableRegionTitle_gmail}"/>
+                        <h:outputText value="#{bundle.ViewSousResponsableRegionLabel_tele}"/>
+                        <h:outputText value="#{sousResponsableRegionController.selected.tele}" title="#{bundle.ViewSousResponsableRegionTitle_tele}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="SousResponsableRegionViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

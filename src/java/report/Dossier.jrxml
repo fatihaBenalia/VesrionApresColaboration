@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="48d08775-2954-409f-9a88-c79afa2fe319">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="parameter1" class="java.util.Date"/>
+	<parameter name="parameter2" class="java.lang.String"/>
+	<parameter name="parameter3" class="java.lang.String"/>
+	<parameter name="parameter4" class="java.lang.String"/>
+	<parameter name="parameter5" class="java.lang.String"/>
+	<parameter name="parameter6" class="java.lang.String"/>
+	<parameter name="parameter7" class="java.lang.String"/>
+	<parameter name="parameter8" class="java.lang.String"/>
+	<parameter name="parameter9" class="java.lang.String"/>
+	<parameter name="parameter10" class="java.lang.String"/>
+	<parameter name="parameter11" class="java.lang.String"/>
+	<parameter name="parameter12" class="java.lang.String"/>
+	<parameter name="parameter13" class="java.lang.String"/>
+	<parameter name="parameter14" class="java.lang.String"/>
+	<parameter name="parameter15" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="bf419a1d-c893-40f1-bba9-e10c61120a3b" x="35" y="10" width="508" height="30" forecolor="#000066"/>
+				<textElement>
+					<font fontName="Cambria" size="24" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[L'Association Marocaine Pour La Prise en Charge ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3fe5cf5a-744a-458f-8294-bf51dee2b599" x="192" y="40" width="146" height="39" forecolor="#000066"/>
+				<textElement>
+					<font fontName="Cambria" size="24" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[de l'Orphelin :]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="624" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="4774069b-edef-402b-bc41-f78057eeee13" x="48" y="24" width="233" height="31"/>
+				<textElement>
+					<font fontName="Cambria" size="18"/>
+				</textElement>
+				<text><![CDATA[-La Date de Creation Dossier :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dbe7b474-15a5-493f-bf94-e9f1f2c695b5" x="48" y="71" width="144" height="32"/>
+				<textElement>
+					<font fontName="Cambria" size="18"/>
+				</textElement>
+				<text><![CDATA[-Le Numero Dossier:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8be12368-bd10-46c5-b6bb-1002197854c1" x="48" y="122" width="143" height="33"/>
+				<textElement>
+					<font fontName="Cambria" size="18"/>
+				</textElement>
+				<text><![CDATA[-Le Nom Famille :]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="30e1f50e-c9d1-4527-be10-c839c9c5bb2a" x="51" y="155" width="473" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.25" lineStyle="Dotted" lineColor="#000066"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="ee62125b-1fd8-4df2-82cf-92ad2cb48112" x="110" y="172" width="348" height="34" forecolor="#000066"/>
+				<textElement>
+					<font size="18" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Les Informations Du Responsable-Famille:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b74db666-9fc1-455d-9f7c-726118fe5b73" x="51" y="217" width="161" height="32"/>
+				<textElement>
+					<font fontName="Cambria" size="18"/>
+				</textElement>
+				<text><![CDATA[-Le CIN :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4d7fd4db-3e48-499d-9602-12be777d0db4" x="48" y="249" width="161" height="39"/>
+				<textElement>
+					<font fontName="Cambria" size="18"/>
+				</textElement>
+				<text><![CDATA[- Le Nom  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a65cabff-b1aa-404e-b313-e172641d8083" x="51" y="288" width="183" height="39"/>
+				<textElement>
+					<font fontName="Cambria" size="18"/>
+				</textElement>
+				<text><![CDATA[-Le Prénom : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="90bd3601-eeaa-4f59-94ba-a3203e2b7230" x="51" y="364" width="140" height="34"/>
+				<textElement>
+					<font fontName="Cambria" size="18"/>
+				</textElement>
+				<text><![CDATA[-Le GSM :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a486fc22-4960-4ee4-968a-07fcb2d06474" x="51" y="327" width="172" height="37"/>
+				<textElement>
+					<font fontName="Cambria" size="18"/>
+				</textElement>
+				<text><![CDATA[-Le Type  :]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="1f2a5bc4-91e2-47bc-a7e5-3cadb87e9066" x="48" y="410" width="476" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.25" lineStyle="Dotted" lineColor="#000066"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="9515034e-2f63-4789-be8e-96317f952348" x="83" y="490" width="151" height="28"/>
+				<textElement>
+					<font fontName="Cambria" size="18"/>
+				</textElement>
+				<text><![CDATA[-La Region :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d318dd29-0671-484c-b1ff-154db134c1a9" x="83" y="522" width="213" height="37"/>
+				<textElement>
+					<font fontName="Cambria" size="18"/>
+				</textElement>
+				<text><![CDATA[-Le Responsable-Region :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b0c29369-7fa8-4d3a-8676-64587d22ca5c" x="56" y="562" width="135" height="33"/>
+				<textElement>
+					<font fontName="Cambria" size="18"/>
+				</textElement>
+				<text><![CDATA[-Suivie Par:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="170ea7df-eb48-4725-9d4a-dcd2b46619cc" x="212" y="559" width="169" height="33"/>
+				<textElement>
+					<font fontName="Cambria" size="18"/>
+				</textElement>
+				<text><![CDATA[-Assistante sociale1 :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f958f63c-b1c9-4018-99fa-4bbf442ebb22" x="212" y="592" width="169" height="32"/>
+				<textElement>
+					<font fontName="Cambria" size="18"/>
+				</textElement>
+				<text><![CDATA[-Assistante sociale2 :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="363eda17-d81c-4b3c-b53d-a21779baf4e8" x="324" y="35" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{parameter1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="14d34d3f-296d-4e7d-9039-f27d5f02e44c" x="324" y="83" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{parameter2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a3faed78-1315-4e12-bb1c-d9f9c4a4ffd8" x="324" y="122" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{parameter3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7059cf5b-30cd-41b6-9b4c-d17af77a4af3" x="281" y="229" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{parameter4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c60ceda9-da9e-4980-a8d3-df2cc7bd5f47" x="281" y="268" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{parameter5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fb04063a-7b05-4ee9-a920-c6e0de92cb2e" x="281" y="307" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{parameter6}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="10aae919-eb19-490a-a2ec-7275d721dfce" x="281" y="344" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{parameter7}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b605b71f-8f4a-4ac4-8d55-11089d915bce" x="281" y="378" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{parameter8}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="33c6e421-6fc8-4653-8d55-487a6bba4645" x="311" y="490" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{parameter9}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="714c135d-dfb5-4fcf-aee0-81a0aff2feb9" x="311" y="532" width="100" height="17"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{parameter11}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6a4e1fdf-3525-48e5-8ab3-d14b2ac85151" x="424" y="562" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{parameter13}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a3489666-de02-4b0f-a1ab-31a5357c42c6" x="424" y="595" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{parameter14}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="6c2eb228-55d9-429a-8c16-24b72c85ca75" x="83" y="457" width="164" height="25"/>
+				<textElement>
+					<font fontName="Cambria" size="18"/>
+				</textElement>
+				<text><![CDATA[-L'Adresse Actuelle :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="30e75b57-d92b-4e60-80a9-49eac9cbbd15" x="311" y="457" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{parameter15}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="ee62125b-1fd8-4df2-82cf-92ad2cb48112" x="110" y="423" width="337" height="34" forecolor="#000066"/>
+				<textElement>
+					<font size="18" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Les Informations Du Region :]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

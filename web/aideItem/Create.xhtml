@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AideItemCreateDlg" widgetVar="AideItemCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateAideItemTitle}">
+            <h:form id="AideItemCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{aideItemController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateAideItemLabel_aide}" for="aide" />
+                        <p:selectOneMenu id="aide" value="#{aideItemController.selected.aide}" >
+                            <f:selectItems value="#{aideController.itemsAvailableSelectOne}"
+                                           var="aideItem"
+                                           itemValue="#{aideItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateAideItemLabel_ressource}" for="ressource" />
+                        <p:inputText id="ressource" value="#{aideItemController.selected.ressource}" title="#{bundle.CreateAideItemTitle_ressource}" />
+                        <p:outputLabel value="#{bundle.CreateAideItemLabel_relation}" for="relation" />
+                        <p:inputText id="relation" value="#{aideItemController.selected.relation}" title="#{bundle.CreateAideItemTitle_relation}" />
+                        <p:outputLabel value="#{bundle.CreateAideItemLabel_type}" for="type" />
+                        <p:inputText id="type" value="#{aideItemController.selected.type}" title="#{bundle.CreateAideItemTitle_type}" />
+                        <p:outputLabel value="#{bundle.CreateAideItemLabel_quantite}" for="quantite" />
+                        <p:inputText id="quantite" value="#{aideItemController.selected.quantite}" title="#{bundle.CreateAideItemTitle_quantite}" />
+                        <p:outputLabel value="#{bundle.CreateAideItemLabel_duree}" for="duree" />
+                        <p:inputText id="duree" value="#{aideItemController.selected.duree}" title="#{bundle.CreateAideItemTitle_duree}" />
+                        <p:outputLabel value="#{bundle.CreateAideItemLabel_montantMensuelle}" for="montantMensuelle" />
+                        <p:inputText id="montantMensuelle" value="#{aideItemController.selected.montantMensuelle}" title="#{bundle.CreateAideItemTitle_montantMensuelle}" />
+                        <p:outputLabel value="#{bundle.CreateAideItemLabel_raisonAide}" for="raisonAide" />
+                        <p:inputText id="raisonAide" value="#{aideItemController.selected.raisonAide}" title="#{bundle.CreateAideItemTitle_raisonAide}" />
+                        <p:outputLabel value="#{bundle.CreateAideItemLabel_commentaire}" for="commentaire" />
+                        <p:inputText id="commentaire" value="#{aideItemController.selected.commentaire}" title="#{bundle.CreateAideItemTitle_commentaire}" />
+                        <p:outputLabel value="#{bundle.CreateAideItemLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{aideItemController.selected.id}" title="#{bundle.CreateAideItemTitle_id}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{aideItemController.create}" value="#{bundle.Save}" update="display,:AideItemListForm:datalist,:growl" oncomplete="handleSubmit(args,'AideItemCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="AideItemCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

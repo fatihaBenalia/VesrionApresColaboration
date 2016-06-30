@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CaisseCreateDlg" widgetVar="CaisseCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateCaisseTitle}">
+            <h:form id="CaisseCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{caisseController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateCaisseLabel_montant}" for="montant" />
+                        <p:inputText id="montant" value="#{caisseController.selected.montant}" title="#{bundle.CreateCaisseTitle_montant}" />
+                        <p:outputLabel value="#{bundle.CreateCaisseLabel_type}" for="type" />
+                        <p:inputText id="type" value="#{caisseController.selected.type}" title="#{bundle.CreateCaisseTitle_type}" />
+                        <p:outputLabel value="#{bundle.CreateCaisseLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{caisseController.selected.id}" title="#{bundle.CreateCaisseTitle_id}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{caisseController.create}" value="#{bundle.Save}" update="display,:CaisseListForm:datalist,:growl" oncomplete="handleSubmit(args,'CaisseCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="CaisseCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

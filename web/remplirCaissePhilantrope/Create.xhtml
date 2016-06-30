@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="RemplirCaissePhilantropeCreateDlg" widgetVar="RemplirCaissePhilantropeCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateRemplirCaissePhilantropeTitle}">
+            <h:form id="RemplirCaissePhilantropeCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{remplirCaissePhilantropeController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateRemplirCaissePhilantropeLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{remplirCaissePhilantropeController.selected.id}" title="#{bundle.CreateRemplirCaissePhilantropeTitle_id}" />
+                        <p:outputLabel value="#{bundle.CreateRemplirCaissePhilantropeLabel_dateRemplissage}" for="dateRemplissage" />
+                        <p:calendar id="dateRemplissage" pattern="MM/dd/yyyy" value="#{remplirCaissePhilantropeController.selected.dateRemplissage}" title="#{bundle.EditRemplirCaissePhilantropeTitle_dateRemplissage}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateRemplirCaissePhilantropeLabel_philantrope}" for="philantrope" />
+                        <p:selectOneMenu id="philantrope" value="#{remplirCaissePhilantropeController.selected.philantrope}" >
+                            <f:selectItems value="#{philantropeController.itemsAvailableSelectOne}"
+                                           var="philantropeItem"
+                                           itemValue="#{philantropeItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{remplirCaissePhilantropeController.create}" value="#{bundle.Save}" update="display,:RemplirCaissePhilantropeListForm:datalist,:growl" oncomplete="handleSubmit(args,'RemplirCaissePhilantropeCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="RemplirCaissePhilantropeCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
