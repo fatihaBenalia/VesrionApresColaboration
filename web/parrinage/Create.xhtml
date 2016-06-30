@@ -15,18 +15,18 @@
                         <p:outputLabel value="#{bundle.CreateParrinageLabel_nbrjours1}" for="nbrjours1" />
                         <p:inputText id="nbrjours1" value="#{parrinageController.selected.nbrjours1}" title="#{bundle.CreateParrinageTitle_nbrjours1}" />
                         <p:outputLabel value="#{bundle.CreateParrinageLabel_parrain}" for="parrain" />
-                        <p:selectOneMenu id="parrain" value="#{parrinageController.selected.parrain}" >
+                        <p:selectOneMenu id="parrain" value="#{parrinageController.selected.parrain.id}" >
                             <f:selectItems value="#{parrainController.itemsAvailableSelectOne}"
                                            var="parrainItem"
-                                           itemValue="#{parrainItem}"/>
+                                           itemValue="#{parrainItem.id}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateParrinageLabel_montant}" for="montant" />
                         <p:inputText id="montant" value="#{parrinageController.selected.montant}" title="#{bundle.CreateParrinageTitle_montant}" />
                         <p:outputLabel value="#{bundle.CreateParrinageLabel_dossier}" for="dossier" />
-                        <p:selectOneMenu id="dossier" value="#{parrinageController.selected.dossier}" >
+                        <p:selectOneMenu id="dossier" value="#{parrinageController.selected.dossier.id}" >
                             <f:selectItems value="#{dossierController.itemsAvailableSelectOne}"
                                            var="dossierItem"
-                                           itemValue="#{dossierItem}"/>
+                                           itemValue="#{dossierItem.id}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateParrinageLabel_debutPar}" for="debutPar" />
                         <p:calendar id="debutPar" pattern="MM/dd/yyyy" value="#{parrinageController.selected.debutPar}" title="#{bundle.EditParrinageTitle_debutPar}"  showOn="button"/>

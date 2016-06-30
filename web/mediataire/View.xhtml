@@ -12,10 +12,6 @@
             <h:form id="MediataireViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{mediataireController.selected != null}">
-                        <h:outputText value="#{bundle.ViewMediataireLabel_parrain}"/>
-                        <h:outputText value="#{mediataireController.selected.parrain}" title="#{bundle.ViewMediataireTitle_parrain}"/>
-                        <h:outputText value="#{bundle.ViewMediataireLabel_id}"/>
-                        <h:outputText value="#{mediataireController.selected.id}" title="#{bundle.ViewMediataireTitle_id}"/>
                         <h:outputText value="#{bundle.ViewMediataireLabel_nom}"/>
                         <h:outputText value="#{mediataireController.selected.nom}" title="#{bundle.ViewMediataireTitle_nom}"/>
                         <h:outputText value="#{bundle.ViewMediataireLabel_prenom}"/>
@@ -26,6 +22,8 @@
                         <h:outputText value="#{mediataireController.selected.gmail}" title="#{bundle.ViewMediataireTitle_gmail}"/>
                         <h:outputText value="#{bundle.ViewMediataireLabel_adresse}"/>
                         <h:outputText value="#{mediataireController.selected.adresse}" title="#{bundle.ViewMediataireTitle_adresse}"/>
+                        <h:outputText value="#{bundle.ViewMediataireLabel_id}"/>
+                        <h:outputText value="#{mediataireController.selected.id}" title="#{bundle.ViewMediataireTitle_id}"/>
                     </p:panelGrid>
                     <p:commandButton value="#{bundle.Close}" onclick="MediataireViewDialog.hide()"/>
                 </h:panelGroup>

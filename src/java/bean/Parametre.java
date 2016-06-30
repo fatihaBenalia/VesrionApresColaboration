@@ -6,13 +6,12 @@
 package bean;
 
 import java.io.Serializable;
-
-import java.util.Objects;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.Temporal;
 
 /**
  *
@@ -25,12 +24,99 @@ public class Parametre implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private double valeur1;//600
-    private double valeur2;//300
-    private double valeur3;//300
-    private double valeur4;//50
+    private double montantComplete;//600
+    private double montantPartielle;//300
+    private double alimentation;//300
+    private double habillement;//50
+    private double MatelasEtCouvertures;//50
+    private double sante;//50
+    private double scolarité;//50
+    private double sacrifice;//100
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dateApplication;
+    private int ress;
 
-    public Parametre() {
+    public int getRess() {
+        return ress;
+    }
+
+    public void setRess(int ress) {
+        this.ress = ress;
+    }
+    
+
+    public Date getDateApplication() {
+        return dateApplication;
+    }
+
+    public void setDateApplication(Date dateApplication) {
+        this.dateApplication = dateApplication;
+    }
+
+
+   
+    public double getMontantComplete() {
+        return montantComplete;
+    }
+
+    public void setMontantComplete(double montantComplete) {
+        this.montantComplete = montantComplete;
+    }
+
+    public double getMontantPartielle() {
+        return montantPartielle;
+    }
+
+    public void setMontantPartielle(double montantPartielle) {
+        this.montantPartielle = montantPartielle;
+    }
+
+    public double getAlimentation() {
+        return alimentation;
+    }
+
+    public void setAlimentation(double alimentation) {
+        this.alimentation = alimentation;
+    }
+
+    public double getHabillement() {
+        return habillement;
+    }
+
+    public void setHabillement(double habillement) {
+        this.habillement = habillement;
+    }
+
+    public double getMatelasEtCouvertures() {
+        return MatelasEtCouvertures;
+    }
+
+    public void setMatelasEtCouvertures(double MatelasEtCouvertures) {
+        this.MatelasEtCouvertures = MatelasEtCouvertures;
+    }
+
+    public double getSante() {
+        return sante;
+    }
+
+    public void setSante(double sante) {
+        this.sante = sante;
+    }
+
+    public double getScolarité() {
+        return scolarité;
+    }
+
+    public void setScolarité(double scolarité) {
+        this.scolarité = scolarité;
+    }
+
+    public double getSacrifice() {
+        return sacrifice;
+    }
+
+    public void setSacrifice(double sacrifice) {
+        this.sacrifice = sacrifice;
     }
 
     public Long getId() {
@@ -41,55 +127,21 @@ public class Parametre implements Serializable {
         this.id = id;
     }
 
-    public double getValeur1() {
-        return valeur1;
-    }
-
-    public void setValeur1(double valeur1) {
-        this.valeur1 = valeur1;
-    }
-
-    public double getValeur2() {
-        return valeur2;
-    }
-
-    public void setValeur2(double valeur2) {
-        this.valeur2 = valeur2;
-    }
-
-    public double getValeur3() {
-        return valeur3;
-    }
-
-    public void setValeur3(double valeur3) {
-        this.valeur3 = valeur3;
-    }
-
-    public double getValeur4() {
-        return valeur4;
-    }
-
-    public void setValeur4(double valeur4) {
-        this.valeur4 = valeur4;
-    }
-
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 59 * hash + Objects.hashCode(this.id);
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Parametre)) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Parametre other = (Parametre) obj;
-        if (!Objects.equals(this.id, other.id)) {
+        Parametre other = (Parametre) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -97,15 +149,7 @@ public class Parametre implements Serializable {
 
     @Override
     public String toString() {
-        return "Parametre{" + "id=" + id + '}';
+        return "bean.Parametre[ id=" + id + " ]";
     }
-   
-    
-    
-    
-    
-    
-
-    
 
 }

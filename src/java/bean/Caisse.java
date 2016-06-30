@@ -6,14 +6,14 @@
 package bean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+
 
 /**
  *
@@ -21,47 +21,103 @@ import javax.persistence.OneToOne;
  */
 @Entity
 public class Caisse implements Serializable {
-    @OneToOne(mappedBy = "caisse")
-    private RemplissageItemPhilantrope remplissageItemPhilantrope;
-    @OneToOne(mappedBy = "caisse")
-    private RemplissageItem remplissageItem;
-  
     @OneToMany(mappedBy = "caisse")
-    private List<OperationCaisse> operations;
- 
-    private static final long serialVersionUID = 1L;
+    private List<Operationn> operationns;
+
+    
+    @OneToMany(mappedBy = "caisse")
+    private List<OperationMois> operationMoiss;
   
+    private static final long serialVersionUID = 1L;
     @Id
-   private String id;
-    private double montant;
-    private int type; /// 1/ couverture 2/ habillement 3/sante 4/ scolarite 5/ aid
+    
+    private String id;
+    private double dete;
+    private double depense;
+    private double profit;
+    private double entree;
+    private double entreeDossier;
 
-    public List<OperationCaisse> getOperations() {
-        return operations;
+    public double getEntreeDossier() {
+        return entreeDossier;
     }
 
-    public void setOperations(List<OperationCaisse> operations) {
-        this.operations = operations;
+    public void setEntreeDossier(double entreeDossier) {
+        this.entreeDossier = entreeDossier;
+    }
+    
+    
+    private String type; /// social ou gestion 
+
+    public List<Operationn> getOperationns() {
+        if(operationns == null){
+            operationns = new ArrayList<>();
+        }
+        return operationns;
     }
 
-    public double getMontant() {
-        return montant;
+    public void setOperationns(List<Operationn> operationns) {
+        this.operationns = operationns;
     }
 
-    public void setMontant(double montant) {
-        this.montant = montant;
+    public double getDete() {
+        return dete;
     }
 
-    public int getType() {
+    public void setDete(double dete) {
+        this.dete = dete;
+    }
+
+    public double getDepense() {
+        return depense;
+    }
+
+    public void setDepense(double depense) {
+        this.depense = depense;
+    }
+
+    public double getProfit() {
+        return profit;
+    }
+
+    public void setProfit(double profit) {
+        this.profit = profit;
+    }
+
+    public double getEntree() {
+        return entree;
+    }
+
+    public void setEntree(double entree) {
+        this.entree = entree;
+    }
+
+    
+    
+    
+    public List<OperationMois> getOperationMoiss() {
+        if(operationMoiss == null){
+            operationMoiss = new ArrayList<>();
+        }
+        return operationMoiss;
+    }
+
+    public void setOperationMoiss(List<OperationMois> operationMoiss) {
+        this.operationMoiss = operationMoiss;
+    }
+    
+   
+    
+   
+
+    public String getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(String type) {
         this.type = type;
     }
 
-    
-    
     public String getId() {
         return id;
     }
@@ -70,26 +126,12 @@ public class Caisse implements Serializable {
         this.id = id;
     }
 
+ 
+   
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.id);
-        return hash;
+    public String toString() {
+        return id +"" ;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Caisse other = (Caisse) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        return true;
-    }
-    
+
 }

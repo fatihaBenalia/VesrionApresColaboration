@@ -12,14 +12,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.ejb.EJBException;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.inject.Named;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
-@ManagedBean(name = "assistanteSocialeController")
+@Named("assistanteSocialeController")
 @SessionScoped
 public class AssistanteSocialeController implements Serializable {
 
@@ -109,6 +109,10 @@ public class AssistanteSocialeController implements Serializable {
         }
     }
 
+    public AssistanteSociale getAssistanteSociale(java.lang.String id) {
+        return getFacade().find(id);
+    }
+
     public List<AssistanteSociale> getItemsAvailableSelectMany() {
         return getFacade().findAll();
     }
@@ -127,7 +131,7 @@ public class AssistanteSocialeController implements Serializable {
             }
             AssistanteSocialeController controller = (AssistanteSocialeController) facesContext.getApplication().getELResolver().
                     getValue(facesContext.getELContext(), null, "assistanteSocialeController");
-            return controller.getFacade().find(getKey(value));
+            return controller.getAssistanteSociale(getKey(value));
         }
 
         java.lang.String getKey(String value) {

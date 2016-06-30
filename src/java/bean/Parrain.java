@@ -6,13 +6,12 @@
 package bean;
 
 import java.io.Serializable;
-import java.util.Objects;
-
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
@@ -24,7 +23,8 @@ public class Parrain implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @OneToOne
     private Mediataire mediataire;
     private String nom;
@@ -32,28 +32,13 @@ public class Parrain implements Serializable {
     private String telephone;
     private String gmail;
     private String adresse;
-
-    @OneToOne
-    private Parrinage parrinage;
-
-    public Parrain() {
-    }
-
-    public String getId() {
+    
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
-    }
-
-    
-    public Parrinage getParrinage() {
-        return parrinage;
-    }
-
-    public void setParrinage(Parrinage parrinage) {
-        this.parrinage = parrinage;
     }
 
     public String getNom() {
@@ -96,9 +81,10 @@ public class Parrain implements Serializable {
         this.adresse = adresse;
     }
 
+ 
     public Mediataire getMediataire() {
-        if (mediataire == null) {
-            mediataire = new Mediataire();
+        if(mediataire == null){
+            mediataire= new Mediataire();
         }
         return mediataire;
     }
@@ -107,34 +93,29 @@ public class Parrain implements Serializable {
         this.mediataire = mediataire;
     }
 
+   
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.id);
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Parrain)) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Parrain other = (Parrain) obj;
-        if (!Objects.equals(this.id, other.id)) {
+        Parrain other = (Parrain) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
     }
 
-   
+
+ 
     
-
-    @Override
-    public String toString() {
-        return "nom=" + nom + "prenom=" + prenom;
-    }
-
 }

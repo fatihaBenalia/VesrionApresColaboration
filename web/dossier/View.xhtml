@@ -12,14 +12,14 @@
             <h:form id="DossierViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{dossierController.selected != null}">
-                        <h:outputText value="#{bundle.ViewDossierLabel_ramed}"/>
-                        <h:outputText value="#{dossierController.selected.ramed}" title="#{bundle.ViewDossierTitle_ramed}"/>
-                        <h:outputText value="#{bundle.ViewDossierLabel_responsableRegion}"/>
-                        <h:outputText value="#{dossierController.selected.responsableRegion}" title="#{bundle.ViewDossierTitle_responsableRegion}"/>
-                        <h:outputText value="#{bundle.ViewDossierLabel_region}"/>
-                        <h:outputText value="#{dossierController.selected.region}" title="#{bundle.ViewDossierTitle_region}"/>
-                        <h:outputText value="#{bundle.ViewDossierLabel_etatSanteMere}"/>
-                        <h:outputText value="#{dossierController.selected.etatSanteMere}" title="#{bundle.ViewDossierTitle_etatSanteMere}"/>
+                        <h:outputText value="#{bundle.ViewDossierLabel_montantDepenseSanter}"/>
+                        <h:outputText value="#{dossierController.selected.montantDepenseSanter}" title="#{bundle.ViewDossierTitle_montantDepenseSanter}"/>
+                        <h:outputText value="#{bundle.ViewDossierLabel_laid}"/>
+                        <h:outputText value="#{dossierController.selected.laid}" title="#{bundle.ViewDossierTitle_laid}"/>
+                        <h:outputText value="#{bundle.ViewDossierLabel_compteAssociationParrinage}"/>
+                        <h:outputText value="#{dossierController.selected.compteAssociationParrinage}" title="#{bundle.ViewDossierTitle_compteAssociationParrinage}"/>
+                        <h:outputText value="#{bundle.ViewDossierLabel_etat}"/>
+                        <h:outputText value="#{dossierController.selected.etat}" title="#{bundle.ViewDossierTitle_etat}"/>
                         <h:outputText value="#{bundle.ViewDossierLabel_nbrOrphelin}"/>
                         <h:outputText value="#{dossierController.selected.nbrOrphelin}" title="#{bundle.ViewDossierTitle_nbrOrphelin}"/>
                         <h:outputText value="#{bundle.ViewDossierLabel_nbrMembre}"/>
@@ -44,10 +44,18 @@
                         <h:outputText value="#{dossierController.selected.numero}" title="#{bundle.ViewDossierTitle_numero}"/>
                         <h:outputText value="#{bundle.ViewDossierLabel_nomFamille}"/>
                         <h:outputText value="#{dossierController.selected.nomFamille}" title="#{bundle.ViewDossierTitle_nomFamille}"/>
+                        <h:outputText value="#{bundle.ViewDossierLabel_region}"/>
+                        <h:outputText value="#{dossierController.selected.region}" title="#{bundle.ViewDossierTitle_region}"/>
+                        <h:outputText value="#{bundle.ViewDossierLabel_responsableRegion}"/>
+                        <h:outputText value="#{dossierController.selected.responsableRegion}" title="#{bundle.ViewDossierTitle_responsableRegion}"/>
                         <h:outputText value="#{bundle.ViewDossierLabel_adresseActuelle}"/>
                         <h:outputText value="#{dossierController.selected.adresseActuelle}" title="#{bundle.ViewDossierTitle_adresseActuelle}"/>
+                        <h:outputText value="#{bundle.ViewDossierLabel_etatPedagogique}"/>
+                        <h:outputText value="#{dossierController.selected.etatPedagogique}" title="#{bundle.ViewDossierTitle_etatPedagogique}"/>
                         <h:outputText value="#{bundle.ViewDossierLabel_etatEthique}"/>
                         <h:outputText value="#{dossierController.selected.etatEthique}" title="#{bundle.ViewDossierTitle_etatEthique}"/>
+                        <h:outputText value="#{bundle.ViewDossierLabel_etatSante}"/>
+                        <h:outputText value="#{dossierController.selected.etatSante}" title="#{bundle.ViewDossierTitle_etatSante}"/>
                         <h:outputText value="#{bundle.ViewDossierLabel_logement}"/>
                         <h:outputText value="#{dossierController.selected.logement}" title="#{bundle.ViewDossierTitle_logement}"/>
                         <h:outputText value="#{bundle.ViewDossierLabel_activite}"/>

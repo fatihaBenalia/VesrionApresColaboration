@@ -12,8 +12,14 @@
             <h:form id="CaisseViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{caisseController.selected != null}">
-                        <h:outputText value="#{bundle.ViewCaisseLabel_montant}"/>
-                        <h:outputText value="#{caisseController.selected.montant}" title="#{bundle.ViewCaisseTitle_montant}"/>
+                        <h:outputText value="#{bundle.ViewCaisseLabel_dete}"/>
+                        <h:outputText value="#{caisseController.selected.dete}" title="#{bundle.ViewCaisseTitle_dete}"/>
+                        <h:outputText value="#{bundle.ViewCaisseLabel_depense}"/>
+                        <h:outputText value="#{caisseController.selected.depense}" title="#{bundle.ViewCaisseTitle_depense}"/>
+                        <h:outputText value="#{bundle.ViewCaisseLabel_profit}"/>
+                        <h:outputText value="#{caisseController.selected.profit}" title="#{bundle.ViewCaisseTitle_profit}"/>
+                        <h:outputText value="#{bundle.ViewCaisseLabel_entree}"/>
+                        <h:outputText value="#{caisseController.selected.entree}" title="#{bundle.ViewCaisseTitle_entree}"/>
                         <h:outputText value="#{bundle.ViewCaisseLabel_type}"/>
                         <h:outputText value="#{caisseController.selected.type}" title="#{bundle.ViewCaisseTitle_type}"/>
                         <h:outputText value="#{bundle.ViewCaisseLabel_id}"/>

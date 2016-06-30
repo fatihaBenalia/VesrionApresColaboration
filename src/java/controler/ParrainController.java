@@ -3,6 +3,7 @@ package controler;
 import bean.Parrain;
 import controler.util.JsfUtil;
 import controler.util.JsfUtil.PersistAction;
+import controler.util.SessionUtil;
 import service.ParrainFacade;
 
 import java.io.Serializable;
@@ -12,14 +13,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.ejb.EJBException;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.inject.Named;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
-@ManagedBean(name = "parrainController")
+@Named("parrainController")
 @SessionScoped
 public class ParrainController implements Serializable {
 
@@ -27,11 +28,30 @@ public class ParrainController implements Serializable {
     private service.ParrainFacade ejbFacade;
     private List<Parrain> items = null;
     private Parrain selected;
+    private Parrain parrainn1;
+
+    public Parrain getParrainn1() {
+        if(parrainn1 == null){
+            parrainn1 = new Parrain();
+        }
+        return parrainn1;
+    }
+
+    public void setParrainn1(Parrain parrainn1) {
+        this.parrainn1 = parrainn1;
+    }
+    
+ 
+    
+    
 
     public ParrainController() {
     }
 
     public Parrain getSelected() {
+        if (selected == null) {
+            selected = new Parrain();
+        }
         return selected;
     }
 
@@ -109,6 +129,10 @@ public class ParrainController implements Serializable {
         }
     }
 
+    public Parrain getParrain(java.lang.Long id) {
+        return getFacade().find(id);
+    }
+
     public List<Parrain> getItemsAvailableSelectMany() {
         return getFacade().findAll();
     }
@@ -127,16 +151,16 @@ public class ParrainController implements Serializable {
             }
             ParrainController controller = (ParrainController) facesContext.getApplication().getELResolver().
                     getValue(facesContext.getELContext(), null, "parrainController");
-            return controller.getFacade().find(getKey(value));
+            return controller.getParrain(getKey(value));
         }
 
-        java.lang.String getKey(String value) {
-            java.lang.String key;
-            key = value;
+        java.lang.Long getKey(String value) {
+            java.lang.Long key;
+            key = Long.valueOf(value);
             return key;
         }
 
-        String getStringKey(java.lang.String value) {
+        String getStringKey(java.lang.Long value) {
             StringBuilder sb = new StringBuilder();
             sb.append(value);
             return sb.toString();
@@ -157,5 +181,29 @@ public class ParrainController implements Serializable {
         }
 
     }
+////////////////
 
+    public Parrain getParrain1() {
+        Parrain par = SessionUtil.getParrin();
+        return par;
+    }
+
+    public void rechrcher() {
+        items = ejbFacade.rechercher(parrainn1);
+
+    }
+
+    public void selection() {
+        SessionUtil.registerParrain(selected);
+        System.out.println("hqqqq hwaaa" + selected.getNom());
+    }
+    
+     public void createParrain(){
+        int res=ejbFacade.createParrain(selected);
+        if(res >0){
+            JsfUtil.addSuccessMessage("Le Parrain Est Ajoutee Avec Succes");
+        }else {
+            JsfUtil.addErrorMessage("Error !  Ce Parrain Existe Deja !");
+        }
+    }
 }

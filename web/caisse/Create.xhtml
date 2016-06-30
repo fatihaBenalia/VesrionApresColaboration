@@ -12,8 +12,14 @@
             <h:form id="CaisseCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{caisseController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateCaisseLabel_montant}" for="montant" />
-                        <p:inputText id="montant" value="#{caisseController.selected.montant}" title="#{bundle.CreateCaisseTitle_montant}" />
+                        <p:outputLabel value="#{bundle.CreateCaisseLabel_dete}" for="dete" />
+                        <p:inputText id="dete" value="#{caisseController.selected.dete}" title="#{bundle.CreateCaisseTitle_dete}" />
+                        <p:outputLabel value="#{bundle.CreateCaisseLabel_depense}" for="depense" />
+                        <p:inputText id="depense" value="#{caisseController.selected.depense}" title="#{bundle.CreateCaisseTitle_depense}" />
+                        <p:outputLabel value="#{bundle.CreateCaisseLabel_profit}" for="profit" />
+                        <p:inputText id="profit" value="#{caisseController.selected.profit}" title="#{bundle.CreateCaisseTitle_profit}" />
+                        <p:outputLabel value="#{bundle.CreateCaisseLabel_entree}" for="entree" />
+                        <p:inputText id="entree" value="#{caisseController.selected.entree}" title="#{bundle.CreateCaisseTitle_entree}" />
                         <p:outputLabel value="#{bundle.CreateCaisseLabel_type}" for="type" />
                         <p:inputText id="type" value="#{caisseController.selected.type}" title="#{bundle.CreateCaisseTitle_type}" />
                         <p:outputLabel value="#{bundle.CreateCaisseLabel_id}" for="id" />

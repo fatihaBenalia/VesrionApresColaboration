@@ -1,6 +1,12 @@
 package controler.util;
 
-import bean.Utilisateur;
+
+import bean.CaisseMoisCaisse;
+import bean.CaisseTTCaisse;
+import bean.Dossier;
+import bean.Parrain;
+import bean.Parrinage;
+import bean.User;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
@@ -13,16 +19,55 @@ public class SessionUtil {
         super();
     }
 
-     public static void registerUser(Utilisateur user){
-         setAttribute("user", user);
+      public static void registerParrain(Parrain parrain){
+          setAttribute("pp", parrain);
     }
-     public static void removeUser(String cle) {
-        removeAttribute(cle);
+     public static Parrain getParrin(){
+       return  (Parrain) getAttribute("pp");
+    }
+      public static void registerUser(User user){
+          setAttribute("pp1", user);
+    }
+     public static User getUser(){
+       return  (User) getAttribute("pp1");
     }
      
-     public static Utilisateur getConnectedUser(){
-         return (Utilisateur) getAttribute("user");
+        public static void registerDossier(Dossier dossier){
+          setAttribute("dd", dossier);
     }
+     public static Dossier getDossier(){
+       return  (Dossier) getAttribute("dd");
+    }
+     
+     
+     
+        public static void registerCaisseMoisCaisse(CaisseMoisCaisse caisseMoisCaisse){
+          setAttribute("cc", caisseMoisCaisse);
+    }
+     public static CaisseMoisCaisse getCaisseMoisCaisse(){
+       return  (CaisseMoisCaisse) getAttribute("cc");
+    }
+     
+        public static void registerCaisseTTCaisse(CaisseTTCaisse caisseTTCaisse){
+          setAttribute("cc1", caisseTTCaisse);
+    }
+     public static CaisseTTCaisse getCaisseTTCaisse(){
+       return  (CaisseTTCaisse) getAttribute("cc1");
+    }
+     
+     
+     
+     
+        public static void registerParrinage(Parrinage parrinage){
+          setAttribute("aq", parrinage);
+    }
+     public static Parrinage getParrinage(){
+       return  (Parrinage) getAttribute("aq");
+    }
+     
+     
+     
+    
     public static SessionUtil getInstance() {
         return instance;
     }
@@ -54,6 +99,7 @@ public class SessionUtil {
         }
     }
     
+    
     public static void removeAttribute(String cle) {
         FacesContext fc = FacesContext.getCurrentInstance();
         if (fc != null && fc.getExternalContext() != null) {
@@ -64,10 +110,4 @@ public class SessionUtil {
     }
     
     
-    
-    
-    
-    
 }
-
-
